@@ -14,6 +14,7 @@ namespace zakladkachny
     {
 
         Button prvni;
+        Button druhy;
 
         int pocetTicku = 0;
 
@@ -26,6 +27,15 @@ namespace zakladkachny
             prvni.Top = 10;
             prvni.Click += this.Clicked;
             this.Controls.Add(prvni);
+            
+            druhy = new Button();
+            druhy.Text = "blba";
+            druhy.Left = 200;
+            druhy.Top = 10;
+            // zmena
+            druhy.Click += this.Clicked;
+            this.Controls.Add(druhy);
+
         }
 
         public void Clicked(object sender, EventArgs args)
@@ -35,7 +45,7 @@ namespace zakladkachny
         }
 
         private void timer_Tick(object sender, EventArgs e)
-        {
+        {   prvni.Top ++;
             prvni.Text = "Tick " + pocetTicku++;
         }
     }
