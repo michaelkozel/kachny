@@ -17,7 +17,7 @@ namespace zakladkachny
         Button druhy;
 
         int pocetTicku = 0;
-
+        List<Button> list;
         public Form1()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace zakladkachny
             prvni.Top = 10;
             prvni.Click += this.Clicked;
             this.Controls.Add(prvni);
-            
+
             druhy = new Button();
             druhy.Text = "pada";
             druhy.Left = 200;
@@ -35,20 +35,39 @@ namespace zakladkachny
             // zmena druha
             druhy.Click += this.Clicked;
             this.Controls.Add(druhy);
+            Random random = new Random();
             timer.Enabled = true;
+            list = new List<Button>();
+       
+            for (int i = 0; i < 10; i++)
+            {
+                int pozice = random.Next(0, this.Width - 1);
+                druhy = new Button();
+                druhy.Text = "pada";
+                druhy.Left = pozice;
+                druhy.Top = 10;
+                this.Controls.Add(druhy);
+                // zmena druha
 
+
+                list.Add(druhy);
+            }
         }
 
         public void Clicked(object sender, EventArgs args)
         {
 
             prvni.Text = "Kliknuto";
-          
+
         }
 
         private void timer_Tick(object sender, EventArgs e)
-        {   druhy.Top ++;
-            prvni.Text = "Tick " + pocetTicku++;
+        {
+            for (int i = 0; i < list.Count;i++) {
+                Button tlacitko = list[i];
+                tlacitko.Top += 3;
+                prvni.Text = "Tick " + pocetTicku++;
+            }
         }
     }
 }
