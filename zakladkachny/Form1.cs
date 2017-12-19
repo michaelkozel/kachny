@@ -29,23 +29,25 @@ namespace zakladkachny
             this.Controls.Add(prvni);
             
             druhy = new Button();
-            druhy.Text = "blba";
+            druhy.Text = "pada";
             druhy.Left = 200;
             druhy.Top = 10;
             // zmena druha
             druhy.Click += this.Clicked;
             this.Controls.Add(druhy);
+            timer.Enabled = true;
 
         }
 
         public void Clicked(object sender, EventArgs args)
         {
+
             prvni.Text = "Kliknuto";
-            timer.Enabled = true;
+          
         }
 
         private void timer_Tick(object sender, EventArgs e)
-        {   prvni.Top ++;
+        {   druhy.Top ++;
             prvni.Text = "Tick " + pocetTicku++;
         }
     }
