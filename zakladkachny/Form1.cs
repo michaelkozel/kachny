@@ -43,9 +43,12 @@ namespace zakladkachny
             {
 
                 druhy = new Button();
+                druhy.BackgroundImage = Image.FromFile("kachna.png");
+                druhy.Width = 350;
+                druhy.Height = 200;
                 int pozice = random.Next(label1.Width, ClientSize.Width - druhy.Width);
                 druhy.Click += this.Clicked;
-                druhy.Text = "Kachna";
+                druhy.Text = "";
                 druhy.Left = pozice;
                 druhy.Top = random.Next(-10, 15);
                 this.Controls.Add(druhy);
