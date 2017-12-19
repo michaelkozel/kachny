@@ -32,7 +32,7 @@ namespace zakladkachny
             druhy.Text = "blba";
             druhy.Left = 200;
             druhy.Top = 10;
-            // zmena
+            // zmena druha
             druhy.Click += this.Clicked;
             this.Controls.Add(druhy);
 
