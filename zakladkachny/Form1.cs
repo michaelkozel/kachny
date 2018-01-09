@@ -44,6 +44,7 @@ namespace zakladkachny
 
                 druhy = new Button();
                 druhy.BackgroundImage = Image.FromFile("kachna.png");
+                druhy.BackgroundImageLayout = ImageLayout.Stretch;
                 druhy.Width = 350;
                 druhy.Height = 200;
                 int pozice = random.Next(label1.Width, ClientSize.Width - druhy.Width);
@@ -61,10 +62,7 @@ namespace zakladkachny
         {
             Button odesilatel = (Button)sender;
            
-            odkliknuto++;
-            label1.Text = "Skóre: " + odkliknuto;
-          
-              label1.Text = "Skóre: " + odkliknuto; 
+            label1.Text = "Skóre: " + ++odkliknuto; 
             odesilatel.Top = random.Next(-10, 10);
             odesilatel.Left = random.Next(label1.Width, ClientSize.Width - druhy.Width);
 
