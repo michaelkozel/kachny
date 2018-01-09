@@ -12,7 +12,6 @@ namespace zakladkachny
 {
     public partial class Form1 : Form
     {
-
         Button prvni;
         Button druhy;
         int odkliknuto = 0;
@@ -41,11 +40,10 @@ namespace zakladkachny
             label1.Text = "Skóre: ";
             for (int i = 0; i < 10; i++)
             {
-
                 druhy = new Button();
                 druhy.BackgroundImage = Image.FromFile("kachna.png");
-                druhy.Width = 350;
-                druhy.Height = 200;
+                druhy.Width = 75;
+                druhy.Height = 75;
                 int pozice = random.Next(label1.Width, ClientSize.Width - druhy.Width);
                 druhy.Click += this.Clicked;
                 druhy.Text = "";
